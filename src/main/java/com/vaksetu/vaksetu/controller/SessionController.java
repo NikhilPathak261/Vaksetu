@@ -1,0 +1,26 @@
+package com.vaksetu.vaksetu.controller;
+
+import com.vaksetu.vaksetu.model.Session;
+import com.vaksetu.vaksetu.service.SessionService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/sessions")
+public class SessionController {
+
+    @Autowired
+    private SessionService sessionService;
+
+    @PostMapping
+    public Session createSession(@RequestBody Session session){
+        return sessionService.createSession(session);
+    }
+
+    @GetMapping("/{userId}")
+    public List<Session> getSessionsByUser(@PathVariable Long userId){
+        return sessionService.getSessionsByUserId(userId);
+    }
+}
