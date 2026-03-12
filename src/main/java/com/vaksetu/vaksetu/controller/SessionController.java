@@ -1,5 +1,6 @@
 package com.vaksetu.vaksetu.controller;
 
+import com.vaksetu.vaksetu.dto.SessionDTO;
 import com.vaksetu.vaksetu.model.Session;
 import com.vaksetu.vaksetu.service.SessionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +16,8 @@ public class SessionController {
     private SessionService sessionService;
 
     @PostMapping
-    public Session createSession(@RequestBody Session session){
-        return sessionService.createSession(session);
+    public Session createSession(@RequestBody SessionDTO sessionDTO){
+        return sessionService.createSession(sessionDTO);
     }
 
     @GetMapping("/{userId}")
