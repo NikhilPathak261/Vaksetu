@@ -3,9 +3,10 @@ package com.vaksetu.vaksetu.controller;
 import com.vaksetu.vaksetu.dto.SessionDTO;
 import com.vaksetu.vaksetu.model.Session;
 import com.vaksetu.vaksetu.service.SessionService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
+import jakarta.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -16,7 +17,7 @@ public class SessionController {
     private SessionService sessionService;
 
     @PostMapping
-    public Session createSession(@RequestBody SessionDTO sessionDTO){
+    public Session createSession(@Valid @RequestBody SessionDTO sessionDTO){
         return sessionService.createSession(sessionDTO);
     }
 
