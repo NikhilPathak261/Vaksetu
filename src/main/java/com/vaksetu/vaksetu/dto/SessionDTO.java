@@ -1,5 +1,6 @@
 package com.vaksetu.vaksetu.dto;
 
+import jakarta.validation.*;
 import lombok.*;
 
 @Getter

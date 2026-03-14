@@ -17,7 +17,7 @@ public class SessionService {
     public Session createSession(SessionDTO sessionDTO){
 
         Session session = new Session();
-        session.setTopic(session.getTopic());
+        session.setTopic(sessionDTO.getTopic());
         session.setScore(sessionDTO.getScore());
         session.setFeedback(sessionDTO.getFeedback());
         session.setUserId(sessionDTO.getUserId());
